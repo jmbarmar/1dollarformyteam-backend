@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: 1dollarformyteam-backend
+    runtime: node
+    buildCommand: npm install
+    startCommand: npm start
+    plan: free
+    envVars:
+      - key: KOFI_TOKEN
+        sync: false
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_KEY
+        sync: false

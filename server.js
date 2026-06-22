@@ -53,7 +53,8 @@ app.get("/api/data", async (req, res) => {
       last_updated: new Date().toISOString(),
     });
   } catch (err) {
-    res.status(500).json({ error: err.message });
+    console.error("GET /api/data error:", err.message, err.cause);
+    res.status(500).json({ error: err.message, cause: String(err.cause) });
   }
 });
 
